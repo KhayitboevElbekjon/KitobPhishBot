@@ -6,7 +6,7 @@ from aiogram.utils.callback_data import CallbackData
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.types import ParseMode
 
-API_Token = "6465672744:AAGeSnhv5a94OwythYFi8dtA4k7Uvzrf4K4"
+API_Token = "6465672744:AAHmhs_yporVQ_iRKeuWd3g39t9YIDccHso"
 logging.basicConfig(level=logging.INFO)
 DATABASE_NAME = 'user_data.db'
 
@@ -142,11 +142,11 @@ async def start(message: types.Message):
         await message.reply("Siz allaqachon ro'yxatdan o'tgansiz.")
         await message.reply("Quyidagi menyu orqali kitob turini tanlang:", reply_markup=main_menu)
     else:
-        await message.reply(f"Assalomu alaykum {message.from_user.full_name}! Kitoblar olamiga xush kelibsiz! Botdan foydalanish uchun registratsiydan o'ting! Iltimos, telefon raqamingizni ulashing.",
+        await message.reply(f"Assalomu alaykum {message.from_user.full_name}! Kitoblar olamiga xush kelibsiz! Botdan foydalanish uchun 'Kirish' tugmasini bosing! ",
                             reply_markup=types.ReplyKeyboardRemove())
-        await message.answer("Telefon raqamingizni yuborish uchun tugmani bosing.",
+        await message.answer("Asosiy menyuga o'tish uchun Kirish tugmasini bosing!",
                              reply_markup=types.ReplyKeyboardMarkup(resize_keyboard=True).add(
-                                 types.KeyboardButton("Telefon raqamni yuborish", request_contact=True)))
+                                 types.KeyboardButton("Kirish", request_contact=True)))
 
 
 @dp.message_handler(content_types=types.ContentTypes.CONTACT)
